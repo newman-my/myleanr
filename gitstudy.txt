@@ -1,0 +1,36 @@
+git学习
+
+一、创建本地仓库
+（1）创建一个目录 如:mkdir mydir
+（2）进入到这个目录中 如:cd mydir
+（3）执行命令 git init
+二、把文件添加到版本库
+（1）将文件放入版本库的目录或它的子目录中。
+（2）执行命令 git add filename
+（3）执行命令 git commit -m "这是描述的字符串"
+三、查看版本库状态
+（1）执行命令git status 可查看当前版本库的状态
+（2）执行命令git diff filename 可查看文件哪些地方作了修改
+（3）执行命令git log可查看从远到近的每次提交情况，可加参数 --pretty=online
+四、版本回退
+（1）执行命令 git reset --hard HEAD^ 回退到当前版本的上一个版本
+（2）执行命令 git reset --hard 2352312  回退到commit id为2352312的版本
+（3）执行命令 git reflog 可查看每次执行git命令的情况。
+五、撤销修改
+（1）执行命令 git checkout --filename可撤销工作区文件的修改，如果文件已放暂存区，则工作区中文件回到放入暂存区后的状态。
+（2）执行命令 git reset HEAD file 可撤销暂存区的修改回来工作区。
+六、删除文件 
+（1）当在工作区中删除文件后可以
+     git rm filename
+	 git commit -m
+（2）如果删错了可以
+	 git checkout --file 找回工作区。
+七、添加远程仓库
+（1）先登录github 然后Create a new repo
+（2）在Repository name 中填入仓库名如：learn
+（3）点击Create repository按钮。
+（4）执行命令 git remote add origin git@github.com:newman-my/learn.git
+将本地仓库和远程仓库关联，远程仓库就叫  origin 当然也可以改。
+（5）执行命令 git push -u origin master 将本地仓库的内容推送到远程仓库。
+（6）此后只要本地仓库作了提交都可以用命令 git push origin master 将最新修改推送到远程仓库。
+
